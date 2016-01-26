@@ -1,12 +1,34 @@
 <ul>
 	{% for id, movie in movies.items() %}
 	<li style="list-style: none;">
-		<div class="movieTitle">
-			Name: {{ movie["title"] }}<br />
-			Genre(s): {{ movie["genres"] }}<br />
-			Rating: <img src="{{ movie['rating'] }}" alt="Rating" /><br />
-            <div id="movieImage">Image: <img src="{{ movie['image'] }}" alt="Image from the movie" /></div>
-			Leffatykki review: <a href="{{ movie['review'] }}">{{ movie['review'] }}</a></br>
+		<div class="pure-g movieTitle">
+
+			<div class="pure-u-1-4">
+				<div id="movieImage">
+					<!-- Image: -->
+					<img class="pure-img" src="{{ movie['image'] }}" alt="Image from the movie" />
+				</div>
+			</div>
+
+			<div class="pure-u-3-4">
+				<!-- Name: -->
+				<h2>{{ movie["title"] }}</h2>
+
+				<h3>Genre(s):</h3>
+				<p>
+					{{ movie["genres"] }}
+				</p>
+			</div>
+
+
+			<div class="pure-u-1-4">
+				<!-- Rating: -->
+				<img class="pure-img" src="{{ movie['rating'] }}" alt="Rating" /><br />
+			</div>
+			<div class="pure-u-3-4">
+				<h3>Reviews:</h3>
+				<a href="{{ movie['review'] }}">Leffatykki review</a></br>
+			</div>
 		</div>
 	</li>
 	{% endfor %}

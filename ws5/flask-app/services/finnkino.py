@@ -40,8 +40,10 @@ class FinnKinoXML(object):
             normalized_title = self.normalize_movie_title(title)
             rating = show.find('RatingImageUrl').text
             genres = show.find('Genres').text.split(",")
+            # images = list(show.find('Images'))
             images = list(show.find('Images'))
-            image = images[0].text
+            # image = images[0].text
+            image = images[2].text
             movies[event_id] = {
                 "title": title,
                 "normalized_title": normalized_title,
